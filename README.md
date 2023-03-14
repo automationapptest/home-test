@@ -92,3 +92,25 @@
 	- Navigate to http://localhost:3100/search
 	- Leave search box empty and submit the search
 	- Assert that "Please provide a search word." message is shown.
+
+### Suggested requirements for running tests:
+- Maven 3.8.7
+- Java JDK 18.0.1.1
+- Chrome browser 111
+- Firefox browser 110
+
+### Setup:
+- git clone https://github.com/automatedguy/home-test.git
+- cd home-test
+- mvn clean test
+
+Or open with your favorite IDE and run the classes:
+- LoginTest
+- CheckoutTest
+- GridTest
+- SearchTest
+
+### Dependencies:
+- Selenium: Web driver and related libraries
+- TestNG: annotations and asserts
+- Webdrivermanager: auto setup for chrome and firefox drivers

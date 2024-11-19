@@ -24,9 +24,11 @@
 
 1. Programming languages
    - Java
+   - Javascript
 
-2. Drivers. Only one accepted
+2. Drivers
    - Playwright
+   - Selenium
 
 3. Browsers
 	- Chrome (preferred)

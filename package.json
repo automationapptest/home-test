@@ -1,0 +1,20 @@
+{
+  "name": "home-test",
+  "version": "1.0.0",
+  "description": "## Must have before start",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NicoSalva/home-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.49.1",
+    "allure-playwright": "^3.0.7"
+  }
+}

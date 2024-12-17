@@ -1,0 +1,27 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+
+# Logs
+logs/
+*.log
+*.log.*
+
+# Playwright specific
+playwright-report/
+test-results/
+allure-results/
+allure-report/
+
+# IDEs and editors
+.vscode/
+.idea/
+*.iml
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Mac system files
+.AppleDouble
+.LSOverride

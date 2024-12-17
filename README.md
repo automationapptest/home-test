@@ -1,93 +1,90 @@
-#**App Automation Test**
+# Home Test Project
 
-## Must have before start
+This repository contains automated tests for the **Home Test Project**, developed using Playwright. The tests validate various functionalities, including login, checkout, grid, and search.
 
-- Git
-- Docker
+## Prerequisites
 
-### Steps
+Before you begin, ensure you have the following installed on your system:
+- **Node.js** (v16 or later)
+- **npm** (Node Package Manager)
+- **Docker** (if you need to run the application locally)
 
-1. Pull the docker image containing the web app
-`docker pull automaticbytes/demo-app`
+## Installation
 
-2. Run the image
-`docker run -p 3100:3100 automaticbytes/demo-app`
+1. Clone the repository and navigate to the project directory:
+   ```
+   git clone https://github.com/NicoSalva/home-test.git
+   cd home-test
+   ```
 
-3. Verify the app is shown in below url and set it as the base url for the tests.
-`http://localhost:3100`
+2. Install the dependencies:
+```
+npm install
+```
+3. Install Playwright browsers:
+```
+npx playwright install
+```
+4. Pull and run the Docker image for the web application:
+```
+docker pull automaticbytes/demo-app
+docker run -p 3100:3100 automaticbytes/demo-app
+```
 
-4. Fork this repository and develop your tests following bellow guidances/requisites.
+5. Verify the application is running: Open http://localhost:3100 in your browser.
 
-5. When finished open a Pull Request for Code Review.
+## Running the Tests
 
-### General requisites for submission
+To run all the tests together:
+```
+npm test
+```
 
-1. Programming languages
-   - Java
-   - Javascript
+## Run a Specific Test File
 
-2. Drivers
-   - Playwright
-   - Selenium
+```
+npx playwright test tests/<test-file>.spec.js
+```
 
-3. Browsers
-	- Chrome (preferred)
-	- Firefox
+Example:
+```
+npx playwright test tests/login.spec.js
+```
 
-### General test requisites
-- All tests should provide a setup and tear down mechanism that opens and closes the browser.
-- All tests should run successfully either from IDE or command line.
-- Instructions to build and run the code and tests submitted must be provided.
-- Submitted code implementing a Page Object Model will be taken in high consideration.
+## Run a Specific Test
 
-### Tests Scenarios
-1.  Login Success
-   - Navigate to http://localhost:3100/login
-   - Successfully login with credentials: johndoe19/supersecret
-   - Assert that welcome message containing username is shown.
+```
+npx playwright test tests/<test-file>.spec.js --grep "<test-name>"
+```
 
-2. Login Failure A
-   - Navigate to http://localhost:3100/login
-   - Enter wrong username/password
-   - Assert error message is shown.
+Example:
+```
+npx playwright test tests/login.spec.js --grep "TEST02 - Login Failure A"
+```
 
-3. Login Failure B
-   - Navigate to http://localhost:3100/login
-   - Leave both username/password in blank
-   - Assert error message is shown.
+## Headless Mode
+If you want to run the tests in headless mode (without opening the browser), modify the headless flag in the playwright.config.js:
+```
+headless: true,
+```
 
-4. Checkout Form Order Success
-   - Navigate to http://localhost:3100/checkout
-   - Complete all the fields
-   - Verify that if "Shipping address same as billing" checkbox is not checkmarked then checkmark it.
-   - Submit the form and assert that the order confirmation number is not empty.
+Alternatively, override it directly when running the test:
+```
+npx playwright test --headed=false
+```
 
-5. Checkout Form Alert
-   - Navigate to http://localhost:3100/checkout
-   - Complete all the fields
-   - Verify that if "Shipping address same as billing" checkbox is checkmarked, then uncheckmark it.
-   - Try to submit the form and validate that the alert message is shown and confirm the alert.
-   - Assert alert is gone.
+## Reporting
 
-6. Cart Total Test
-    - Navigate to http://localhost:3100/checkout
-	- Assert that the cart total shown is correct for the item prices added.
+## Generate and open the Allure report:
 
-7. Grid Item Test
-    - Navigate to http://localhost:3100/grid
-    - Assert that in position 7 the product shown is "Super Pepperoni"
-	- Assert that the price shown is $10
-	
-8. Grid All Items Test	
-	- Navigate to http://localhost:3100/grid
-	- Assert that all the items have a non empty title, price, image and a button.
+```
+npx allure generate allure-results --clean -o allure-report
+npx allure open allure-report
+```
 
-9. Search Success
-  - Navigate to http://localhost:3100/search
-  - Search for any word (for instance automation)
-  - Assert that "Found one result for" plus the word you searched is shown.
+## My Solution
+I decided to apply the POM (Page Object Model) pattern because it was mentioned as an added value in the challenge requirements. However, I didn’t find it necessary to create a separate section for encapsulating locators since the project size is relatively small. I prefer to focus on optimizing development practicality and ease of use over strictly adhering to theoretical concepts.
 
-10. Search Empty
-	- Navigate to http://localhost:3100/search
-	- Leave search box empty and submit the search
-	- Assert that "Please provide a search word." message is shown.
+Even though it wasn’t mentioned as a requirement, I added Allure reporting because I believe it’s visually appealing and adds significant value to frameworks like this.
+
+While I would normally prefer fewer comments, for this type of project I think it’s appropriate to include explanations of what each method does in the pages. This makes the framework easier to understand and maintain for anyone reviewing or expanding the solution.

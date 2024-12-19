@@ -1,0 +1,35 @@
+{
+    "env": {
+        "greeting": "Hi (QA env)",
+        "environment": "QA",
+        "credentials": {
+            "common": {"user": "johndoe19","password": "supersecret"},
+            "wrong": {"user": "johndoe19","password": "wrongpassword"},
+            "blank": {"user": "","password": ""}
+        },
+        "billingInfo": {
+            "fullName": "John Doe",
+            "address": "123 Main St",
+            "city": "Metropolis",
+            "state": "CA",
+            "postalCode": "12345",
+            "email": "test@mail.com"
+        },
+        "creditCard": {
+            "visa": {
+                "number": "4111111111111111",
+                "nameOnCard": "John Doe",
+                "expMonth": "December",
+                "expYear": "2026",
+                "cvv": "123"
+            },
+            "mastercard": {
+                "number": "5111111111111111",
+                "nameOnCard": "John Doe",
+                "expMonth": "November",
+                "expYear": "2026",
+                "cvv": "456"
+            }
+        }
+    }
+}

@@ -16,23 +16,34 @@
 3. Verify the app is shown in below url and set it as the base url for the tests.
 `http://localhost:3100`
 
-4. Fork this repository and develop your tests following bellow guidances/requisites.
+4. Create in your personal github a public repository (name it for instance home-test).
 
-5. When finished open a Pull Request for Code Review.
+5. Code requested exercises, commit and push your code and send the repository link according to the instructions given by the recruiter who contacted you.
+
+6. Forking this repository is not needed.
 
 ### General requisites for submission
 
-1. Programming languages
+ 1. **Programming languages**
     - Java
     - Javascript
+    - Typescript
 
-2. Drivers
+ 2. **Drivers**
     - Playwright
     - Selenium
 
-3. Browsers
-    - Chrome (preferred)
-    - Firefox
+ 3. **Browsers**
+    - Cross-Browser Testing: Tests should be compatible with multiple browsers and ensure they behave consistently.
+  
+ 4. **Multi-Platform Testing (_Desirable_):**
+	Tests should support execution on multiple platforms, including:
+   	- Desktop (Windows, macOS, Linux)
+   	- Mobile devices (Android, iOS)
+  
+ 5. **Environment Configuration (_Desirable_):**
+   	- The solution must include a Dockerized environment to ensure tests can be executed in an isolated and reproducible environment.
+   	- Instructions for setting up and running tests in Docker must be provided.
 
 ### General test requisites
 - All tests should provide a setup and tear down mechanism that opens and closes the browser.
